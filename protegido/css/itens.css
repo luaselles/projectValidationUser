@@ -1,0 +1,21 @@
+.brand-link .brand-image {
+    float: left;
+    line-height: .8;
+    margin-left: .8rem;
+    margin-right: .5rem;
+    margin-top: -3px;
+    max-height: 33px;
+    width: auto;
+}
+
+.elevation-3 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23) !important;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.form-cadastro-interressados{
+    /* background-color: #506266; */
+}
