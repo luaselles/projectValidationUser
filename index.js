@@ -142,6 +142,12 @@ function cadastrarInterresados(requisicao, resposta) {
                             <i class="fa fa-paw"></i>
                             <span>Pets</span></a>
                     </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="/listarInterresadosPet">
+                        <i class="fa fa-paw"></i>
+                        <span>Interessados em um Pet</span></a>
+                    </li>
         
                     <!-- Divider -->
                     <hr class="sidebar-divider">
@@ -156,6 +162,14 @@ function cadastrarInterresados(requisicao, resposta) {
                         <a class="nav-link" href="/adotarPet">
                             <i class="fa fa-paw"></i>
                             <span>Adote um pet</span></a>
+                    </li>
+
+                    <hr class="sidebar-divider">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ultimoacesso">
+                            <i class="fa fa-sign-out"></i>
+                            <span>Último acesso?</span></a>
                     </li>
         
                     <!-- Divider -->
@@ -357,6 +371,12 @@ function cadastrarPets(requisicao, resposta) {
                             <span>Pets</span></a>
                     </li>
         
+                    <li class="nav-item">
+                    <a class="nav-link" href="/listarInterresadosPet">
+                        <i class="fa fa-paw"></i>
+                        <span>Interessados em um Pet</span></a>
+                    </li>
+
                     <!-- Divider -->
                     <hr class="sidebar-divider">
         
@@ -372,6 +392,14 @@ function cadastrarPets(requisicao, resposta) {
                             <span>Adote um pet</span></a>
                     </li>
         
+                    <hr class="sidebar-divider">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ultimoacesso">
+                            <i class="fa fa-sign-out"></i>
+                            <span>Último acesso?</span></a>
+                    </li>
+
                     <!-- Divider -->
                     <hr class="sidebar-divider">
         
@@ -475,184 +503,200 @@ function cadastrarInterresadoPet(requisicao, resposta) {
             animal: animal,
             data: data,
         });
-        console.log(listaInterresadosPet);
         resposta.redirect('/listarInterresadosPet');
     } else {
         resposta.write(`
         <!DOCTYPE html>
-        <html lang="en">
-        
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Página de cadastro de Pets</title>
-            <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-                integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        
-            <link
-                href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-                rel="stylesheet">
-        
-            <link rel="stylesheet" href="css/sb-admin-2.min.css">
-        
-            <link rel="stylesheet" href="css/itens.css">
-        </head>
-        
-        <body>
-            <!-- Page Wrapper -->
-            <div id="wrapper">
-        
-                <!-- Sidebar -->
-                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-        
-                    <!-- Sidebar - Brand -->
-                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                        <div class="sidebar-brand-icon rotate-n-15">
-                            <i class="fas fa-laugh-wink"></i>
-                        </div>
-                        <div class="sidebar-brand-text mx-3">
-                            <img src="https://img.freepik.com/vetores-gratis/pata-de-design-de-logotipo-de-animal-de-estimacao-vetor-para-loja-de-animais_53876-136741.jpg"
-                                alt="AdminLTE Logo" width="30" height="30" class="brand-image img-circle elevation-3 mr-1"
-                                style="opacity: .8">
-                            <span>Pet Shop</span>
-        
-                        </div>
-                    </a>
-        
-                    <!-- Divider -->
-                    <hr class="sidebar-divider my-0">
-        
-                    <!-- Nav Item - Dashboard -->
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">
-                            <i class="fa fa-tachometer"></i>
-                            <span>Dashboard</span></a>
-                    </li>
-        
-                    <!-- Divider -->
-                    <hr class="sidebar-divider">
-        
-                    <!-- Heading -->
-                    <div class="sidebar-heading">
-                        Cadastro
-                    </div>
-        
-                    <!-- Nav Item - Tables -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="cadastroInterresados.html">
-                            <i class="fa fa-user-o"></i>
-                            <span>Interessados</span></a>
-                    </li>
-        
-                    <li class="nav-item">
-                        <a class="nav-link" href="cadastroPets.html">
-                            <i class="fa fa-paw"></i>
-                            <span>Pets</span></a>
-                    </li>
-        
-                    <!-- Divider -->
-                    <hr class="sidebar-divider">
-        
-                    <!-- Heading -->
-                    <div class="sidebar-heading">
-                        Listagem
-                    </div>
-        
-                    <!-- Nav Item - Tables -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/listarInterresado">
-                            <i class="fa fa-user-o"></i>
-                            <span>Interessados</span></a>
-                    </li>
-        
-                    <li class="nav-item">
-                        <a class="nav-link" href="/listarPet">
-                            <i class="fa fa-paw"></i>
-                            <span>Pets</span></a>
-                    </li>
-        
-                    <!-- Divider -->
-                    <hr class="sidebar-divider">
-        
-                    <!-- Heading -->
-                    <div class="sidebar-heading">
-                        Adote
-                    </div>
-        
-                    <!-- Nav Item - Charts -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/adotarPet">
-                            <i class="fa fa-paw"></i>
-                            <span>Adote um pet</span></a>
-                    </li>
-        
-                    <!-- Divider -->
-                    <hr class="sidebar-divider">
-        
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout">
-                            <i class="fa fa-sign-out"></i>
-                            <span>Sair</span></a>
-                    </li>
-        
-                    <!-- Divider -->
-                    <hr class="sidebar-divider d-none d-md-block">
-        
-                </ul>
-                <!-- End of Sidebar -->
-        
-                <div class="row">
-                    <div class="col-9 offset-1">
-                        <div class="container m-5 rounded text-start form-cadastro-interressados">
-        
-                            <form method="POST" action='/cadastrarPet' class="row g-3 p-5 needs-validation" novalidate>
-        
-                                <h4>Cadastro de Pets</h4>
-                                <hr>
-        
-                                <!-- / Nome / -->
-                                <div class="col-md-12">
-                                    <label for="nome" class="form-label">Nome:</label>
-                                    <input type="text" class="form-control" id="nome" name="nome" required>`)
-        if (nome == "") {
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de cadastro de Interresado</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/sb-admin-2.min.css">
+
+    <link rel="stylesheet" href="css/itens.css">
+</head>
+
+<body>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">
+                    <img src="https://img.freepik.com/vetores-gratis/pata-de-design-de-logotipo-de-animal-de-estimacao-vetor-para-loja-de-animais_53876-136741.jpg"
+                        alt="AdminLTE Logo" width="30" height="30" class="brand-image img-circle elevation-3 mr-1"
+                        style="opacity: .8">
+                    <span>Pet Shop</span>
+
+                </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fa fa-tachometer"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Cadastro
+            </div>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="cadastroInterresados.html">
+                    <i class="fa fa-user-o"></i>
+                    <span>Interessados</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="cadastroPets.html">
+                    <i class="fa fa-paw"></i>
+                    <span>Pets</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Listagem
+            </div>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/listarInterresado">
+                    <i class="fa fa-user-o"></i>
+                    <span>Interessados</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/listarPet">
+                    <i class="fa fa-paw"></i>
+                    <span>Pets</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/listarInterresadosPet">
+                    <i class="fa fa-paw"></i>
+                    <span>Interessados em um Pet</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Adote
+            </div>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="/adotarPet">
+                    <i class="fa fa-paw"></i>
+                    <span>Adote um pet</span></a>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/ultimoacesso">
+                    <i class="fa fa-sign-out"></i>
+                    <span>Último acesso?</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">
+                    <i class="fa fa-sign-out"></i>
+                    <span>Sair</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <div class="row">
+            <div class="col-11">
+                <div class="container m-5 rounded text-start form-cadastro-interressados">
+
+                    <form method="POST" action='/adotarPet' class="row g-3 p-5 needs-validation" novalidate>
+
+                        <h4>Adotar um Pet</h4>
+                        <hr>
+
+                        <!-- / Interresado / -->
+                        <div class="col-md-12">
+                            <label for="interresado" class="form-label">Interresado:</label>
+                            <select class="form-control" name="interresado" id="interresado">`)
+        if (listaInterressados.length > 0) {
+            for (let i = 0; i < listaInterressados.length; i++) {
+                resposta.write(`<option value="${listaInterressados[i].nome}">${listaInterressados[i].nome}</option>`);
+                resposta.write(`
+                </select>
+                </div>`)
+            }
+        } else {
+            resposta.write(`<option value="">Nenhuma opção a selecionar</option>`);
+            resposta.write(`
+                </select>
+                </div>`)
             resposta.write(`
                <div class="alert alert-danger m-2" role="alert">
-                 Por favor, informe um Nome válido.
+                 Não é possível cadastrar sem um Interresado cadastrado.
                 </div>`);
         }
         resposta.write(`
-        </div>
-
-        <!-- \  Nome \ -->
-
-        <!-- / Idade / -->
-        <div class="col-md-12">
-            <label for="nome" class="form-label">Idade:</label>
-            <input type="text" class="form-control" id="idade" name="idade" required>`)
-        if (idade == "") {
+                            <!-- / Animal / -->
+                            <div class="col-md-12">
+                            <label for="animal" class="form-label">Animal:</label>
+                            <select class="form-control" name="animal" id="animal">
+                            `)
+        if (listaPets.length > 0) {
+            for (let i = 0; i < listaPets.length; i++) {
+                resposta.write(`<option value="${listaPets[i].nome}">${listaPets[i].nome}</option>`);
+                resposta.write(`
+                </select>
+                </div>`)
+            }
+        } else {
+            resposta.write(`<option value="">Nenhuma opção a selecionar</option>`);
+            resposta.write(`
+            </select>
+            </div>`)
             resposta.write(`
             <div class="alert alert-danger m-2" role="alert">
-              Por favor, informe uma Idade válida.
+              Não é possível cadastrar sem um Animal cadastrado.
              </div>`);
         }
         resposta.write(`
-        </div>
-        <!-- \ Idade \ -->
-
-        <!-- / Raça / -->
-        <div class="col-md-12">
-            <label for="nome" class="form-label">Raça:</label>
-            <input type="text" class="form-control" id="raca" name="raca" required>`)
-        if (raca == "") {
-            resposta.write(`
-            <div class="alert alert-danger m-2" role="alert">
-              Por favor, informe uma Raça válida.
-             </div>`);
-        }
-        resposta.write(`   </div>
-        <!-- \ Raça \ -->
-
         <div class="row mb-3 mt-5">
             <div class="col-6 d-grid gap-2">
                 <a class="btn btn-block btn-secondary" href="/">Voltar</a>
@@ -715,6 +759,7 @@ function autenticaUsuario(requisicao, resposta) {
 }
 
 app.post('/login', autenticaUsuario);
+
 app.get('/login', (req, resp) => {
     resp.redirect('/login.html');
 });
@@ -736,6 +781,7 @@ app.post('/cadastrarInterresado', usuarioEstaAutenticado, cadastrarInterresados)
 app.post('/cadastrarPet', usuarioEstaAutenticado, cadastrarPets);
 app.post('/adotarPet', usuarioEstaAutenticado, cadastrarInterresadoPet);
 
+// Lista os cadastros que estão interresados em um pet
 app.get('/listarInterresadosPet', usuarioEstaAutenticado, (req, resp) => {
     resp.write(`<!DOCTYPE html>
     <html lang="en">
@@ -829,6 +875,12 @@ app.get('/listarInterresadosPet', usuarioEstaAutenticado, (req, resp) => {
                         <i class="fa fa-paw"></i>
                         <span>Pets</span></a>
                 </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/listarInterresadosPet">
+                    <i class="fa fa-paw"></i>
+                    <span>Interessados em um Pet</span></a>
+                </li>
     
                 <!-- Divider -->
                 <hr class="sidebar-divider">
@@ -844,7 +896,15 @@ app.get('/listarInterresadosPet', usuarioEstaAutenticado, (req, resp) => {
                         <i class="fa fa-paw"></i>
                         <span>Adote um pet</span></a>
                 </li>
-    
+
+             <hr class="sidebar-divider">
+
+                <li class="nav-item">
+                <a class="nav-link" href="/ultimoacesso">
+                    <i class="fa fa-sign-out"></i>
+                    <span>Último acesso?</span></a>
+                </li>
+
                 <!-- Divider -->
                 <hr class="sidebar-divider">
     
@@ -899,6 +959,162 @@ app.get('/listarInterresadosPet', usuarioEstaAutenticado, (req, resp) => {
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 </html>
+    `);
+});
+
+app.get('/ultimoacesso', usuarioEstaAutenticado, (req, resp) => {
+    resp.write(`<!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página de cadastro de Interresado</title>
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+    
+        <link rel="stylesheet" href="css/sb-admin-2.min.css">
+    
+        <link rel="stylesheet" href="css/itens.css">
+    </head>
+    
+    <body>
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+    
+            <!-- Sidebar -->
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                    <div class="sidebar-brand-icon rotate-n-15">
+                        <i class="fas fa-laugh-wink"></i>
+                    </div>
+                    <div class="sidebar-brand-text mx-3">
+                        <img src="https://img.freepik.com/vetores-gratis/pata-de-design-de-logotipo-de-animal-de-estimacao-vetor-para-loja-de-animais_53876-136741.jpg"
+                            alt="AdminLTE Logo" width="30" height="30" class="brand-image img-circle elevation-3 mr-1"
+                            style="opacity: .8">
+                        <span>Pet Shop</span>
+    
+                    </div>
+                </a>
+    
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
+    
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">
+                        <i class="fa fa-tachometer"></i>
+                        <span>Dashboard</span></a>
+                </li>
+    
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+    
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Cadastro
+                </div>
+    
+                <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastroInterresados.html">
+                        <i class="fa fa-user-o"></i>
+                        <span>Interessados</span></a>
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastroPets.html">
+                        <i class="fa fa-paw"></i>
+                        <span>Pets</span></a>
+                </li>
+    
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+    
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Listagem
+                </div>
+    
+                <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/listarInterresado">
+                        <i class="fa fa-user-o"></i>
+                        <span>Interessados</span></a>
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="/listarPet">
+                        <i class="fa fa-paw"></i>
+                        <span>Pets</span></a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/listarInterresadosPet">
+                    <i class="fa fa-paw"></i>
+                    <span>Interessados em um Pet</span></a>
+                </li>
+    
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+    
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Adote
+                </div>
+    
+                <!-- Nav Item - Charts -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/adotarPet">
+                        <i class="fa fa-paw"></i>
+                        <span>Adote um pet</span></a>
+                </li>
+
+             <hr class="sidebar-divider">
+
+                <li class="nav-item">
+                <a class="nav-link" href="/ultimoacesso">
+                    <i class="fa fa-sign-out"></i>
+                    <span>Último acesso?</span></a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">
+                        <i class="fa fa-sign-out"></i>
+                        <span>Sair</span></a>
+                </li>
+    
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
+    
+            </ul>
+            <!-- End of Sidebar -->`);
+
+    if (req.cookies.dataUltimoAcesso) {
+        
+        resp.write('<p>');
+        resp.write('Seu útimo acesso foi em ' + req.cookies.dataUltimoAcesso);
+        resp.write('</p>');
+    }
+
+    resp.write(`
+    </div>
+    <!-- End of Page Wrapper -->
+        </body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        </html>
     `);
 });
 
@@ -995,6 +1211,12 @@ app.get('/listarInterresado', usuarioEstaAutenticado, (req, resp) => {
                         <i class="fa fa-paw"></i>
                         <span>Pets</span></a>
                 </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/listarInterresadosPet">
+                    <i class="fa fa-paw"></i>
+                    <span>Interessados em um Pet</span></a>
+                </li>
     
                 <!-- Divider -->
                 <hr class="sidebar-divider">
@@ -1011,6 +1233,14 @@ app.get('/listarInterresado', usuarioEstaAutenticado, (req, resp) => {
                         <span>Adote um pet</span></a>
                 </li>
     
+                <hr class="sidebar-divider">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/ultimoacesso">
+                        <i class="fa fa-sign-out"></i>
+                        <span>Último acesso?</span></a>
+                </li>
+
                 <!-- Divider -->
                 <hr class="sidebar-divider">
     
@@ -1163,6 +1393,12 @@ app.get('/listarPet', usuarioEstaAutenticado, (req, resp) => {
                     <span>Pets</span></a>
             </li>
 
+            <li class="nav-item">
+            <a class="nav-link" href="/listarInterresadosPet">
+                <i class="fa fa-paw"></i>
+                <span>Interessados em um Pet</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -1176,6 +1412,14 @@ app.get('/listarPet', usuarioEstaAutenticado, (req, resp) => {
                 <a class="nav-link" href="/adotarPet">
                     <i class="fa fa-paw"></i>
                     <span>Adote um pet</span></a>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/ultimoacesso">
+                    <i class="fa fa-sign-out"></i>
+                    <span>Último acesso?</span></a>
             </li>
 
             <!-- Divider -->
@@ -1239,7 +1483,7 @@ app.get('/listarPet', usuarioEstaAutenticado, (req, resp) => {
     resp.end();
 });
 
-
+// Cadastra um interresado em pet
 app.get('/adotarPet', usuarioEstaAutenticado, (req, resp) => {
     resp.write(`<!DOCTYPE html>
     <html lang="en">
@@ -1333,6 +1577,12 @@ app.get('/adotarPet', usuarioEstaAutenticado, (req, resp) => {
                         <i class="fa fa-paw"></i>
                         <span>Pets</span></a>
                 </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="/listarInterresadosPet">
+                    <i class="fa fa-paw"></i>
+                    <span>Interessados em um Pet</span></a>
+                </li>
     
                 <!-- Divider -->
                 <hr class="sidebar-divider">
@@ -1347,6 +1597,14 @@ app.get('/adotarPet', usuarioEstaAutenticado, (req, resp) => {
                     <a class="nav-link" href="/adotarPet">
                         <i class="fa fa-paw"></i>
                         <span>Adote um pet</span></a>
+                </li>
+
+                <hr class="sidebar-divider">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/ultimoacesso">
+                        <i class="fa fa-sign-out"></i>
+                        <span>Último acesso?</span></a>
                 </li>
     
                 <!-- Divider -->
@@ -1365,7 +1623,7 @@ app.get('/adotarPet', usuarioEstaAutenticado, (req, resp) => {
             <!-- End of Sidebar -->
     
             <div class="row">
-                <div class="col-9 offset-1">
+                <div class="col-11">
                     <div class="container m-5 rounded text-start form-cadastro-interressados">
     
                         <form method="POST" action='/adotarPet' class="row g-3 p-5 needs-validation" novalidate>
@@ -1377,8 +1635,12 @@ app.get('/adotarPet', usuarioEstaAutenticado, (req, resp) => {
                             <div class="col-md-12">
                                 <label for="interresado" class="form-label">Interresado:</label>
                                 <select class="form-control" name="interresado" id="interresado">`)
-    for (let i = 0; i < listaInterressados.length; i++) {
-        resp.write(`<option class="form-control" value="${listaInterressados[i].nome}">${listaInterressados[i].nome}</option>`);
+    if (listaInterressados.length > 0) {
+        for (let i = 0; i < listaInterressados.length; i++) {
+            resp.write(`<option value="${listaInterressados[i].nome}">${listaInterressados[i].nome}</option>`);
+        }
+    } else {
+        resp.write(`<option value="">Nenhuma opção a selecionar</option>`);
     }
     resp.write(`
     </select>
@@ -1388,8 +1650,12 @@ app.get('/adotarPet', usuarioEstaAutenticado, (req, resp) => {
     <label for="animal" class="form-label">Animal:</label>
     <select class="form-control" name="animal" id="animal">
     `)
-    for (let i = 0; i < listaPets.length; i++) {
-        resp.write(`<option class="form-control" value="${listaPets[i].nome}">${listaPets[i].nome}</option>`);
+    if (listaPets.length > 0) {
+        for (let i = 0; i < listaPets.length; i++) {
+            resp.write(`<option value="${listaPets[i].nome}">${listaPets[i].nome}</option>`);
+        }
+    } else {
+        resp.write(`<option value="">Nenhuma opção a selecionar</option>`);
     }
     resp.write(`
     </select>
